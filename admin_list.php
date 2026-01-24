@@ -17,19 +17,7 @@ if ($role !== 'admin') {
 <head>
     <meta charset="UTF-8">
     <title>관리자 페이지 - 도서 관리 시스템</title>
-    <style>
-        body { font-family: 'Malgun Gothic', sans-serif; background-color: #fff1f2; margin: 0; padding: 20px; }
-        .admin-container { max-width: 1000px; margin: 0 auto; background: white; padding: 30px; border-radius: 20px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); }
-        .header { display: flex; justify-content: space-between; align-items: center; border-bottom: 2px solid #e11d48; padding-bottom: 15px; margin-bottom: 20px; }
-        h1 { color: #9f1239; margin: 0; font-size: 24px; }
-        .user-info { font-size: 14px; }
-        .logout-btn { color: #ef4444; text-decoration: none; font-weight: bold; margin-left: 10px; }
-        
-        table { width: 100%; border-collapse: collapse; margin-top: 20px; }
-        th { background-color: #f8fafc; padding: 12px; border-bottom: 2px solid #e2e8f0; text-align: left; font-size: 14px; color: #64748b; }
-        td { padding: 15px; border-bottom: 1px solid #f1f5f9; font-size: 15px; }
-        .status-badge { background: #dcfce7; color: #166534; padding: 4px 8px; border-radius: 6px; font-size: 12px; font-weight: bold; }
-    </style>
+
 </head>
 <body>
     <div class="admin-container">
@@ -68,5 +56,6 @@ if ($role !== 'admin') {
 </body>
 
 </html>
+
 
 
