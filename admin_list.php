@@ -2,7 +2,7 @@
 // DB 연결 및 세션 시작
 include "db_conn.php";
 
-// 1. 관리자 권한 체크 
+// 관리자 권한
 if (!isset($_SESSION['user_id']) || $_SESSION['user_role'] !== 'admin') {
     echo "<script>alert('관리자만 접근 가능한 페이지입니다.'); location.href='login.php';</script>";
     exit;
@@ -12,7 +12,7 @@ if (!isset($_SESSION['user_id']) || $_SESSION['user_role'] !== 'admin') {
 <html lang="ko">
 <head>
     <meta charset="UTF-8">
-    <title>관리자 모드 - 도서 관리 시스템</title>
+    <title>관리자 페이지 - 도서 관리 시스템</title>
     <style>
         body { font-family: 'Malgun Gothic', sans-serif; background-color: #fff1f2; margin: 0; padding: 20px; }
         .admin-container { max-width: 1000px; margin: 0 auto; background: white; padding: 30px; border-radius: 20px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); }
@@ -64,3 +64,4 @@ if (!isset($_SESSION['user_id']) || $_SESSION['user_role'] !== 'admin') {
 </body>
 
 </html>
+
