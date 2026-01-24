@@ -11,13 +11,11 @@ if ($role !== 'admin') {
 }
 ?>
 
-
 <!DOCTYPE html>
 <html lang="ko">
 <head>
     <meta charset="UTF-8">
     <title>관리자 페이지 - 도서 관리 시스템</title>
-
 </head>
 <body>
     <div class="admin-container">
@@ -54,8 +52,8 @@ if ($role !== 'admin') {
         </table>
     </div>
 </body>
-
 </html>
+
 
 
 
