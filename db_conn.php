@@ -1,5 +1,5 @@
 <?php
-$conn = mysqli_connect("localhost", "root", "password", "library_db");
+$conn = mysqli_connect("localhost", "root", "2026", "library_db");
 
 if (!$conn) {
     die("연결 실패: " . mysqli_connect_error());
@@ -10,3 +10,4 @@ if (session_status() == PHP_SESSION_NONE) {
     session_start();
 }
 ?>
+
