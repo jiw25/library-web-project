@@ -1,13 +1,17 @@
 <?php
-// DB 연결 및 세션 시작
 include "db_conn.php";
+$role = isset($_SESSION['user_role']) ? trim($_SESSION['user_role']) : '';
 
-// 관리자 권한
-if (!isset($_SESSION['user_id']) || $_SESSION['user_role'] !== 'admin') {
-    echo "<script>alert('관리자만 접근 가능한 페이지입니다.'); location.href='login.php';</script>";
+if ($role !== 'admin') {
+    echo "<script>
+        alert('관리자만 접근 가능한 페이지입니다.\\n(현재 권한: " . $role . ")'); 
+        location.href='index.php';
+    </script>";
     exit;
 }
 ?>
+
+
 <!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -64,4 +68,5 @@ if (!isset($_SESSION['user_id']) || $_SESSION['user_role'] !== 'admin') {
 </body>
 
 </html>
+
 
