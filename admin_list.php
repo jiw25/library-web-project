@@ -2,7 +2,7 @@
 // DB 연결 및 세션 시작
 include "db_conn.php";
 
-// 1. 관리자 권한 체크 (보안 필수)
+// 1. 관리자 권한 체크 
 if (!isset($_SESSION['user_id']) || $_SESSION['user_role'] !== 'admin') {
     echo "<script>alert('관리자만 접근 가능한 페이지입니다.'); location.href='login.php';</script>";
     exit;
@@ -30,7 +30,7 @@ if (!isset($_SESSION['user_id']) || $_SESSION['user_role'] !== 'admin') {
 <body>
     <div class="admin-container">
         <div class="header">
-            <h1>🛠 관리자 전용 : 도서 DB 관리</h1>
+            <h1>관리자 전용 : 도서 DB 관리</h1>
             <div class="user-info">
                 <strong><?php echo $_SESSION['user_name']; ?></strong> 관리자님 접속 중
                 <a href="logout.php" class="logout-btn">로그아웃</a>
@@ -62,4 +62,5 @@ if (!isset($_SESSION['user_id']) || $_SESSION['user_role'] !== 'admin') {
         </table>
     </div>
 </body>
+
 </html>
