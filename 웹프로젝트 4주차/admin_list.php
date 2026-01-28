@@ -50,9 +50,10 @@ $result = mysqli_query($conn, $sql);
         th { border: 1px solid #ccc; padding: 12px; text-align: center; color: #1e3a8a; background-color: #fff; font-weight: normal; }
         td { border: 1px solid #ccc; padding: 12px; text-align: center; color: #333; }
         
-        /* 관리 버튼 */
-        .action-link { color: #333; text-decoration: none; font-size: 14px; margin: 0 5px; }
-        .action-link:hover { text-decoration: underline; }
+        /* 대출여부 */
+        .status-badge { padding: 6px 12px; border-radius: 20px; font-size: 12px; font-weight: bold; display: inline-block; }
+        .status-available { background-color: #dcfce7; color: #166534; border: 1px solid #bbf7d0; } 
+        .status-rented { background-color: #fee2e2; color: #991b1b; border: 1px solid #fecaca; }  
     </style>
 </head>
 <body>
@@ -90,7 +91,11 @@ $result = mysqli_query($conn, $sql);
                     <td><?php echo $row['call_number']; ?></td>
                     <td>
                         <!-- 대출 상태 표시 -->
-                        <?php echo ($row['status'] == 'available') ? '대출 가능' : '<span style="color:red">대출 중</span>'; ?>
+                        <?php if ($row['status'] == 'available'): ?>
+                            <span class="status-badge status-available">대출 가능</span>
+                        <?php else: ?>
+                            <span class="status-badge status-rented">대출 중</span>
+                        <?php endif; ?>
                     </td>
                     <td>
                          <a href="admin_edit_book.php?id=<?php echo $row['book_id']; ?>" class="btn btn-edit">수정</a>
