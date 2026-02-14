@@ -1,0 +1,194 @@
+/* 기본 초기화 및 폰트 설정 */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Malgun Gothic', sans-serif;
+    background-color: #fff;
+    color: #333;
+    height: 100vh;
+    overflow: hidden;
+}
+
+/* 전체 레이아웃 (사이드바 + 메인) */
+.layout-wrapper {
+    display: flex;
+    height: 100vh;
+    width: 100%;
+}
+
+/* 사이드바 디자인 */
+.sidebar {
+    width: 250px;
+    border-right: 1px solid #ddd;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    background: #fff;
+    flex-shrink: 0;
+}
+
+.sidebar-menu {
+    list-style: none;
+    padding: 0;
+    margin-top: 50px;
+}
+
+.sidebar-menu li {
+    margin-bottom: 25px;
+}
+
+.sidebar-menu a {
+    text-decoration: none;
+    color: #333;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: 0.2s;
+}
+
+.sidebar-menu a:hover, .sidebar-menu a.active {
+    color: #1e40af;
+    font-weight: bold;
+}
+
+/* 상단 로고 헤더 */
+.header-logo {
+    padding: 30px;
+    text-align: left;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.header-logo div {
+    color: #1e3a8a;
+    font-weight: bold;
+    font-size: 20px;
+    line-height: 1.2;
+}
+
+.header-logo span {
+    font-size: 14px;
+    color: #64748b;
+    display: block;
+}
+
+/* 메인 컨텐츠 영역 */
+.main-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+}
+
+/* 홈 화면 전용 */
+.hero-section {
+    background-color: #7c9dff;
+    padding: 50px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: white;
+    flex-shrink: 0;
+}
+
+.hero-section h1 { font-size: 28px; margin: 0 0 10px 0; font-weight: 500; }
+.hero-section p { font-size: 16px; margin: 0 0 30px 0; opacity: 0.9; }
+
+/* 검색창 디자인 */
+.search-container {
+    position: relative;
+    width: 60%;
+    max-width: 800px;
+}
+
+.search-container input { 
+    width: 100%;
+    padding: 15px 50px 15px 25px;
+    border-radius: 40px;
+    border: none; 
+    font-size: 16px;
+    outline: none;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1); 
+}
+
+.search-icon {
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #666;
+    cursor: pointer;
+}
+
+/* 섹션 타이틀 */
+.content-section { padding: 40px; }
+.section-title {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 20px;
+    font-weight: bold;
+    color: #1e3a8a;
+    margin-bottom: 30px;
+}
+.section-title span { font-size: 14px; font-weight: normal; color: #64748b; }
+
+/* 도서 카드 그리드 디자인 */
+.book-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 30px;
+}
+
+.book-card {
+    background: #fff;
+    border: 2px solid #333;
+    border-radius: 20px;
+    padding: 20px;
+    text-align: center;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.book-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+.book-img-box {
+    width: 100%;
+    height: 220px;
+    background-color: #fff;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.book-img-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.no-img { color: #ccc; font-size: 50px; }
+.book-title { font-size: 18px; font-weight: bold; margin-bottom: 5px; color: #333; }
+.book-author { font-size: 14px; color: #666; }
+
+/* 기타 */
+.admin-link {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    font-size: 12px;
+    color: #ccc;
+    text-decoration: none;
+}
